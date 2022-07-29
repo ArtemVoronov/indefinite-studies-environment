@@ -17,6 +17,7 @@ services:
 
   reverse_proxy_nginx:
     build: ./reverse-proxy-nginx/
+    restart: always
     ports:
       - "80:80"
 
