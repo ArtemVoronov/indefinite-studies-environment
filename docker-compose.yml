@@ -14,7 +14,12 @@ services:
       - '5432'
     volumes:
       - database-volume:/var/lib/postgresql/data
-      
+
+  reverse_proxy_nginx:
+    build: ./reverse-proxy-nginx/
+    ports:
+      - "80:80"
+
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
     environment:
